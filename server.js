@@ -32,6 +32,13 @@ app.post('/join_room', (req, res) => {
 // Room Route
 app.get('/room/:tagId', function (req, res) {
     id = req.params.tagId;
+
+    // Room id invalid 
+    if (id.length > 6 || id.length < 4)
+    {
+        return res.redirect('/')
+    }
+
     res.render(__dirname + '/pages/room.html', { id });
 
     //User connecting to room 
@@ -48,12 +55,11 @@ app.get('/room/:tagId', function (req, res) {
 io.on('connection', function (socket) {
 
     socket.on('chat message', function (msg) {
-
         var room_name = socket.request.headers.referer;
         idRoom = room_name.split('/')[4]
-
         io.to(`room#${idRoom}`).emit('chat message', msg);
     })
+
 })
 
 // launch server

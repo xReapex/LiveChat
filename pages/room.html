@@ -2,7 +2,8 @@
 <html>
 
 <head>
-    <title>Chat - Room #<%= id %></title>
+    <title>Chat - Room #<%= id %>
+    </title>
     <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="../public/css/style.css">
 </head>
@@ -19,7 +20,7 @@
             text = document.getElementById('m').value;
             socket.emit('chat message', text);
         }
-        
+
         // On message receive
         var receive = function (msg) {
             var li = document.createElement('li');
@@ -29,12 +30,18 @@
         socket.on('chat message', receive);
     </script>
 
-    <div>
-        <ul id="messages"></ul>
-        <div class="zone_saisie">
-            <input id="m" /> <button onclick="send()">Send</button>
+
+    <div class="centre">
+        <div id="choose_room" class="shadow-lg p-3">
+            <div>
+                <ul id="messages"></ul>
+                <div class="zone_saisie">
+                    <input id="m" /> <button onclick="send()">Send</button>
+                </div>
+            </div>
         </div>
     </div>
+
 </body>
 
 </html>
