@@ -10,6 +10,7 @@
   width: 20%;
   height: 70%;
   border-radius: 5%;
+  padding: 3%;
 }
 
 #choose_room_form_input
@@ -17,4 +18,35 @@
   width: 40%;
   border-radius: 13px;
   text-align: center;
+}
+
+.zone_saisie
+{
+  margin-bottom: 3%;
+}
+
+#m{
+  width: 85%;
+  border-radius: 10%; 
+}
+
+#message_room_input
+{
+  width: 32.5vh;
+  border-radius: 13px;
+  text-align: center;
+  display: inline-block;
+}
+
+#send{
+  width: 5vh;
+  margin-left: 2%; 
+  border-radius: 13px;
+  text-align: left;
+}
+
+#msg_footer{
+  margin-top: 54vh;
+  position: fixed;
+  display: inline-block;
 }

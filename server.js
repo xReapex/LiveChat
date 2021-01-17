@@ -39,6 +39,7 @@ app.get('/room/:tagId', function (req, res) {
         return res.redirect('/')
     }
 
+    // else render file passing id room
     res.render(__dirname + '/pages/room.html', { id });
 
     //User connecting to room 
