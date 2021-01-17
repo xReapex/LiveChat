@@ -1,0 +1,20 @@
+.centre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+#choose_room{
+  background-color:#593196;
+  width: 20%;
+  height: 70%;
+  border-radius: 5%;
+}
+
+#choose_room_form_input
+{
+  width: 40%;
+  border-radius: 13px;
+  text-align: center;
+}

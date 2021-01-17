@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Chat - Room #<%= id %></title>
+    <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../public/css/style.css">
+</head>
+
+<body>
+    <script src='/socket.io/socket.io.js'></script>
+    <script>
+
+        //client 
+        var socket = io();
+
+        //send message to server
+        var send = function () {
+            text = document.getElementById('m').value;
+            socket.emit('chat message', text);
+        }
+        
+        // On message receive
+        var receive = function (msg) {
+            var li = document.createElement('li');
+            li.innerText = msg;
+            document.getElementById('messages').appendChild(li);
+        }
+        socket.on('chat message', receive);
+    </script>
+
+    <div>
+        <ul id="messages"></ul>
+        <div class="zone_saisie">
+            <input id="m" /> <button onclick="send()">Send</button>
+        </div>
+    </div>
+</body>
+
+</html>
