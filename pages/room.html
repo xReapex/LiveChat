@@ -14,38 +14,54 @@
 <body>
     <script src="/socket.io/socket.io.js"></script>
     <script>
+
         //client
         var socket = io();
 
         //send message to server
         var send = function () {
             text = document.getElementById("message_room_input").value;
+            input = document.getElementById("message_room_input");
+            input.value = "";
+
+            if(text.length < 1)
+            {
+                return;
+            }
+
             socket.emit("chat message", text);
         };
 
         // On message receive
         var receive = function (msg) {
             var li = document.createElement("li");
-            li.innerText = msg;
+            li.innerHTML = msg;
             document.getElementById("messages").appendChild(li);
+            document.getElementById('messages').scrollIntoView(false);
         };
         socket.on("chat message", receive);
+
+        // Enter to send message
+        function sendMessage()
+        {
+            document.getElementById("send").click();
+        }
+
     </script>
 
     <div class="centre">
         <div id="choose_room" class="shadow-lg p-3">
-
             <!-- Message list -->
-            <div style="height: 90%; overflow:auto">
+            <div style="height: 90%; overflow-y: scroll;">
+                <!-- overflow:auto -->
                 <ul id="messages" class="text-white"></ul>
             </div>
 
             <!-- Send message box -->
             <div class="row" style="margin-top: 4%">
-                <input required type="text" style="margin-left: 3%" class="form-control" placeholder="Message"
-                    id="message_room_input" />
-                <!--<input type="submit" class="btn btn-outline-secondary" style="margin-left: 3%; border-radius: 13px;" value="Join room"></input> -->
-                <button id="send" onclick="send()" class="btn btn-outline-secondary">
+                <input required type="text" style="margin-left: 3%" class="form-control"
+                    title="Saisissez votre message à envoyer" placeholder="Message" id="message_room_input" onKeyPress="if (event.keyCode == 13) sendMessage()" />
+                <button title="Envoyer" id="send" onclick="send()" class="btn btn-outline-secondary">
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </div>

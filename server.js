@@ -46,7 +46,6 @@ app.get('/room/:tagId', function (req, res) {
     io.on('connection', function (socket) {
         socket.join(`room#${id}`);
         console.log(`User joined room#${id}`);
-
         console.log(io.in(`room#${id}`).allSockets())
     });
 
