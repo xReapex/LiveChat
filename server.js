@@ -34,30 +34,44 @@ app.get('/room/:tagId', function (req, res) {
     id = req.params.tagId;
 
     // Room id invalid 
-    if (id.length > 6 || id.length < 4)
-    {
+    if (id.length > 6 || id.length < 4) {
         return res.redirect('/')
     }
-
-    // else render file passing id room
-    res.render(__dirname + '/pages/room.html', { id });
 
     //User connecting to room 
     io.on('connection', function (socket) {
         socket.join(`room#${id}`);
         console.log(`User joined room#${id}`);
-        console.log(io.in(`room#${id}`).allSockets())
+
+        //console.log(io.sockets.clients(`room#${id}`))
+        //console.log(io.in(`room#${id}`))
     });
+
+    // else render file passing id room & usersCount
+    res.render(__dirname + '/pages/room.html', { id: id });
 
 });
 
 // Messages
 io.on('connection', function (socket) {
 
+    // Message receive
     socket.on('chat message', function (msg) {
         var room_name = socket.request.headers.referer;
         idRoom = room_name.split('/')[4]
         io.to(`room#${idRoom}`).emit('chat message', msg);
+
+        // Refresh room box info
+        function refresh() {
+            console.log('Stats refreshs')
+            allUsers = io.engine.clientsCount // All connected users
+            socket.emit('update_box_info', (allUsers)); // Emit on the opened socket.
+        }
+        refresh();
+        setTimeout(function () {
+            refresh();
+        }, 10000)
+        //
     })
 
 })
