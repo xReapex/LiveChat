@@ -5,6 +5,7 @@
   <title>Chat - Choose room</title>
   <link rel="stylesheet" href="https://bootswatch.com/4/pulse/bootstrap.min.css">
   <link type="text/css" rel="stylesheet" href="../public/css/style.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
@@ -12,17 +13,49 @@
   <div class="centre">
     <div id="choose_room" class="shadow-lg p-3">
       <center>
-        <h3 class="text-secondary" style="margin-top: 60%;">Start to chat !</h3>
+        <h3 id="start_chat" class="text-secondary" style="margin-top: 60%;">Start to chat !</h3>
       </center>
-        <form method="POST" action="/join_room" style="margin-top: 4%;">
+        <form method="POST" action="/join_room" style="margin-top: 8%;">
             <div class="form-group row" style="margin-left: 20%;">
-              <input required type="text" class="form-control" placeholder="Enter room id" name="username" minlength="4" maxlength="6" id="choose_room_form_input">
-              <input type="submit" class="btn btn-outline-secondary" style="margin-left: 3%; border-radius: 13px;" value="Join room"></input>
+              <input required type="text" class="form-control form_room" placeholder="Enter room id" name="roomID" minlength="4" maxlength="6" id="choose_room_form_input">
+              <input type="submit" class="btn btn-outline-secondary" style="margin-left: 3%; border-radius: 13px;" value="Join room" id="submit"></input>
             </div>
+            <input style="margin-left: 20%; width: 61%;" required type="text" class="form-control" placeholder="Select username" name="username" minlength="4" maxlength="6" id="choose_room_form_input">
         </form>
     </div>
   </div>
 
+  <script>
+    // Box
+    ScrollReveal().reveal('#choose_room', {
+      origin: 'bottom',
+      distance: '100%',
+      duration: '2000',
+    });
+    // Start to chat
+    ScrollReveal().reveal('#start_chat', {
+      origin: 'bottom',
+      distance: '50%',
+      duration: '2000',
+      delay: '1000'
+    });
+    //Input field
+    ScrollReveal().reveal('#choose_room_form_input', {
+      origin: 'left',
+      distance: '30%',
+      duration: '2000',
+      delay: '1000',
+      interval: '200'
+    });
+    //submit
+    ScrollReveal().reveal('#submit', {
+      origin: 'right',
+      distance: '30%',
+      duration: '2000',
+      delay: '1000',
+    });
+    
+    // Submit button
+  </script>
 </body>
-
 </html>

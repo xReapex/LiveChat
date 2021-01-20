@@ -6,6 +6,8 @@ const path = require('path');
 const Cryptr = require('cryptr');
 const cryptr = new Cryptr('jfzdavzdauzdsazcauzdat242UF1U4141UF');
 
+global.username = [];
+
 app.use(express.urlencoded({
     extended: true
 }))
@@ -24,9 +26,9 @@ app.get("/", function (req, res) {
 
 // Joinning room
 app.post('/join_room', (req, res) => {
-    const username = req.body.username
-    res.redirect(`/room/${username}`)
-    res.end()
+    const username = req.body.username;
+    res.redirect(`/room/${username}`);
+    res.end();
 })
 
 // Room Route
@@ -42,9 +44,6 @@ app.get('/room/:tagId', function (req, res) {
     io.on('connection', function (socket) {
         socket.join(`room#${id}`);
         console.log(`User joined room#${id}`);
-
-        //console.log(io.sockets.clients(`room#${id}`))
-        //console.log(io.in(`room#${id}`))
     });
 
     // else render file passing id room & usersCount
