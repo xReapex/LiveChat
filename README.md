@@ -1,7 +1,7 @@
 <table>
   <tr>
-    <th>Build</th>
-    <th>Code quality</th>
+    <th>⚙Build</th>
+    <th>😎Code quality</th>
   </tr>
   <tr>
     <td><img alt="AppVeyor" src="https://img.shields.io/appveyor/build/xReapex/LiveChat"></td>
