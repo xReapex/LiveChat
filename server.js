@@ -33,7 +33,7 @@ app.post("/join_room", (req, res) => {
 
 // Room Route
 app.get("/room/:tagId", function (req, res) {
-    id = req.params.tagId;
+    var id = req.params.tagId;
 
     // Room id invalid 
     if (id.length > 6 || id.length < 4) {
@@ -62,7 +62,6 @@ io.on("connection", function (socket) {
 
         // Refresh room box info
         function refresh() {
-            console.log("Stats refreshs");
             allUsers = io.engine.clientsCount; // All connected users
             socket.emit("update_box_info", (allUsers)); // Emit on the opened socket.
         }
@@ -76,6 +75,4 @@ io.on("connection", function (socket) {
 });
 
 // launch server
-server.listen(3000, function () {
-    console.log("Server running on 3000")
-});
+server.listen(3000);
