@@ -46,7 +46,9 @@ app.get("/room/:tagId", function (req, res) {
     });
 
     // else render file passing id room & usersCount
-    res.render(__dirname + "/pages/room.html", { id: id });
+    res.render(__dirname + "/pages/room.html", { 
+        id: id
+    });
 
 });
 
@@ -67,7 +69,7 @@ io.on("connection", function (socket) {
         refresh();
         setTimeout(function () {
             refresh();
-        }, 10000)
+        }, 10000);
     });
 
 });
