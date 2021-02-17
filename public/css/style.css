@@ -1,11 +1,11 @@
-.centre{
+.centre {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 90vh;
 }
 
-#choose_room{
+#choose_room {
   background-color:#593196;
   width: 20%;
   height: 70%;
@@ -13,39 +13,36 @@
   padding: 3%;
 }
 
-#choose_room_form_input
-{
+#choose_room_form_input {
   width: 40%;
   border-radius: 13px;
   text-align: center;
 }
 
-.zone_saisie
-{
+.zone_saisie {
   margin-bottom: 3%;
 }
 
-#m{
+#m {
   width: 85%;
   border-radius: 10%; 
 }
 
-#message_room_input
-{
+#message_room_input {
   width: 32.5vh;
   border-radius: 13px;
   text-align: center;
   display: inline-block;
 }
 
-#send{
+#send {
   width: 5vh;
   margin-left: 2%; 
   border-radius: 13px;
   text-align: left;
 }
 
-#msg_footer{
+#msg_footer {
   margin-top: 54vh;
   position: fixed;
   display: inline-block;
@@ -73,8 +70,7 @@
   background: #a991d4;
 }
 
-.box_info
-{
+.box_info {
   margin-right: 7%;
   border-radius: 5%;
   background-color:#593196;
