@@ -33,7 +33,7 @@ app.post("/join_room", (req, res) => {
 
 // Room Route
 app.get("/room/:tagId", function (req, res) {
-    var id = req.params.tagId;
+    const id = req.params.tagId;
 
     // Room id invalid 
     if (id.length > 6 || id.length < 4) {
@@ -43,7 +43,6 @@ app.get("/room/:tagId", function (req, res) {
     //User connecting to room 
     io.on("connection", function (socket) {
         socket.join(`room#${id}`);
-        console.log(`User joined room#${id}`);
     });
 
     // else render file passing id room & usersCount
@@ -56,20 +55,19 @@ io.on("connection", function (socket) {
 
     // Message receive
     socket.on("chat message", function (msg) {
-        var room_name = socket.request.headers.referer;
-        idRoom = room_name.split("/")[4];
+        var roomName = socket.request.headers.referer;
+        var idRoom = roomName.split("/")[4];
         io.to(`room#${idRoom}`).emit("chat message", msg);
 
         // Refresh room box info
         function refresh() {
-            allUsers = io.engine.clientsCount; // All connected users
+            var allUsers = io.engine.clientsCount; // All connected users
             socket.emit("update_box_info", (allUsers)); // Emit on the opened socket.
         }
         refresh();
         setTimeout(function () {
             refresh();
         }, 10000)
-        //
     });
 
 });
