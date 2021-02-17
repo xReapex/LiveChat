@@ -4,7 +4,7 @@
   <tr>
     <th>⚙Build</th>
     <th>😎Code quality</th>
-    <th>Server engine</th>
+    <th>🛠Server engine</th>
   </tr>
   <tr>
     <td><img alt="AppVeyor" src="https://img.shields.io/appveyor/build/xReapex/LiveChat"></td>
