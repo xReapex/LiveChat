@@ -1,0 +1,2 @@
+# LiveChat
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8d40206c82cf4148baeca98afc8095e2)](https://app.codacy.com/gh/xReapex/LiveChat?utm_source=github.com&utm_medium=referral&utm_content=xReapex/LiveChat&utm_campaign=Badge_Grade)
