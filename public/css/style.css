@@ -6,7 +6,7 @@
 }
 
 #choose_room {
-  background-color:#593196;
+  background-color: #593196;
   width: 20%;
   height: 70%;
   border-radius: 5%;
@@ -25,7 +25,7 @@
 
 #m {
   width: 85%;
-  border-radius: 10%; 
+  border-radius: 10%;
 }
 
 #message_room_input {
@@ -37,7 +37,7 @@
 
 #send {
   width: 5vh;
-  margin-left: 2%; 
+  margin-left: 2%;
   border-radius: 13px;
   text-align: left;
 }
