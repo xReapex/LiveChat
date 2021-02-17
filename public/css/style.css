@@ -55,13 +55,13 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #6f41b5; 
+  background: #6f41b5;
   border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background:#a991d4;
+  background: #a991d4;
   border-radius: 10px;
 }
 
@@ -73,7 +73,7 @@
 .box_info {
   margin-right: 7%;
   border-radius: 5%;
-  background-color:#593196;
+  background-color: #593196;
   width: 12%;
   height: 20%;
   color: white;
