@@ -12,3 +12,13 @@
     <td><img alt="npm" src="https://img.shields.io/npm/v/express"></td>
   </tr>
 </table>
+
+📌This live chat allows you to communicate anonymously using rooms :
+
+- Create your room and invite your friends.
+- No registration required to use the chat.
+- The data is sent directly to the room and is in no way saved.
+
+🛎Warning ! Messages are deleted when the page is restarted !
+
+🔗Join the chat [now](http://149.91.89.248:3000).
