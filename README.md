@@ -1,4 +1,4 @@
-<h1>LiveChat - A Secure Live Chat</h1>
+<h1>✨LiveChat - A Secure Live Chat</h1>
 
 <table>
   <tr>
