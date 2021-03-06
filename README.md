@@ -17,6 +17,6 @@
 - No registration required to use the chat.
 - The data is sent directly to the room and is in no way saved.
 
-🛎Warning ! Messages are deleted when the page is restarted !
+🛎Warning ! Messages are deleted when the page is reloaded !
 
 🔗Join the chat [now](http://149.91.89.248:3000).
